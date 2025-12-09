@@ -1,7 +1,15 @@
 import pandas as pd
 from backtesting import Backtest, Strategy
 
-# json/dict
+'''
+json/dict
+这边是在写 dict, 之后变成 pandas dataframe, pass in Backtest class里(黑盒), 
+变成这个我们Strategy的subclass里的 self.data
+
+backtesting dependency对我们pass in 的 pandas dataframe是有要求的
+如下: 
+data is a pd.DataFrame with columns: Open, High, Low, Close, and (optionally) Volume.
+'''
 data_dict = {
     'Open':  [100, 102, 103, 150, 200],
     'High':  [110, 112, 113, 160, 210],
@@ -60,9 +68,11 @@ class MyFirstStrategy(Strategy):
         current_date = self.data.index[-1] # 获取当前时间
         print(f"[next] Date: {current_date} | Price: {current_close} | Position: {self.position.size}")
 
+        prev_close = self.data.Close[-2]
+
         # == 简单的 trading logic ==
         if not self.position:
-            if current_close == 153:
+            if current_close >= prev_close:
                 print(f"    >>> SIGNAL: BUY at {current_close}")
                 self.buy() # 发送买单
         
