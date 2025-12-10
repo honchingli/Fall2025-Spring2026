@@ -101,32 +101,60 @@ class ManualStrategy(Strategy):
         return
 
 
-'''小dataset用于好理解'''
-data_dict = {
-    'Open':  [100, 102, 103, 150, 200],
-    'High':  [110, 112, 113, 160, 210],
-    'Low':   [ 90,  92,  93, 140, 190],
-    'Close': [100, 102, 153, 200, 180], # 注意看 Close 的变化
-    'Volume':[1000,1002,1003,5000,1000]
-}
+# '''小dataset用于好理解'''
+# data_dict = {
+#     'Open':  [100, 102, 103, 150, 200],
+#     'High':  [110, 112, 113, 160, 210],
+#     'Low':   [ 90,  92,  93, 140, 190],
+#     'Close': [100, 102, 153, 200, 180], # 注意看 Close 的变化
+#     'Volume':[1000,1002,1003,5000,1000]
+# }
 
-# print(type(data_dict))
-# print(data_dict)
+# # print(type(data_dict))
+# # print(data_dict)
 
-# dates = pd.to_datetime(['2024-01-01', '2024-01-02', '2024-01-03', '2024-01-04', '2024-01-05'])
-# df = pd.DataFrame(data_dict, index=dates)
+# # dates = pd.to_datetime(['2024-01-01', '2024-01-02', '2024-01-03', '2024-01-04', '2024-01-05'])
+# # df = pd.DataFrame(data_dict, index=dates)
 
-# print(df)
+# # print(df)
 
-'''
-GOOG 是我们 pass in 的 OHLCV (Open, High, Low, Close, Volume)
-'''
-# print(GOOG)
+# '''
+# GOOG 是我们 pass in 的 OHLCV (Open, High, Low, Close, Volume)
+# '''
+# # print(GOOG)
 bt = Backtest(GOOG, ManualStrategy, cash=10000)
-stats = bt.run()
+# stats = bt.run()
 
-print("----------------conclude----------------------")
-# print(stats['_trades'].head()) # 打印前几笔交易看看
+# print("----------------conclude----------------------")
+# # print(stats['_trades'].head()) # 打印前几笔交易看看
 
-print(stats)
+# print(stats)
 
+# 2. 运行优化 (Optimization)
+# 这行代码会 spawn 多个进程 (Multiprocessing) 去跑 Grid Search
+stats, heatmap = bt.optimize(
+    n1=range(5, 30, 5),   # 尝试 n1: [5, 10, 15, 20, 25]
+    n2=range(10, 70, 10), # 尝试 n2: [10, 20, 30, 40, 50, 60]
+    maximize='Return [%]', # 目标函数: 让收益率最大化 (也可以是 Sharpe Ratio)
+    constraint=lambda p: p.n1 < p.n2, # 约束条件: 快线周期必须小于慢线
+    return_heatmap=True   # 返回热力图数据
+)
+
+
+# 3. 打印最优结果
+print("=== Optimization Results ===")
+print(stats) # 这里的 stats 是表现最好的那一组参数的结果
+print("\nBest Parameters:")
+print(stats['_strategy']) # 看看最优的 n1, n2 是多少
+
+# 4. 可视化热力图 (Seaborn/Matplotlib)
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# heatmap 是一个 Pandas Series，我们需要 reshape 成 Matrix 才能画图
+# 这里的逻辑稍微需要一点 Pandas 技巧
+heatmap_df = heatmap.unstack()
+plt.figure(figsize=(10, 8))
+sns.heatmap(heatmap_df, annot=True, cmap='viridis', fmt='.1f')
+plt.title('Return (%) based on n1 and n2')
+plt.show()
