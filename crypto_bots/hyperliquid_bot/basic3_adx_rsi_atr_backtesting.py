@@ -3,38 +3,77 @@ import pandas_ta_classic as ta
 from backtesting import Backtest, Strategy
 from backtesting.lib import crossover
 import numpy as np
+# from backtesting.test import GOOG
 
 # ==========================================
 # 1. CS 实验台：造数据 (Mock Data Generation)
 # ==========================================
-def create_mock_data(n=1000): # 增加数据量到 1000 条
-    # 使用 linspace 生成 x 轴
-    # 这里的 20 * pi 意味着我们会生成 10 个完整的正弦波周期 (2pi 一个周期)
-    # 频率变高了，RSI 反应会更剧烈
-    x = np.linspace(0, 20 * np.pi, n) 
+# def create_mock_data(n=1000): # 增加数据量到 1000 条
+#     # 使用 linspace 生成 x 轴
+#     # 这里的 20 * pi 意味着我们会生成 10 个完整的正弦波周期 (2pi 一个周期)
+#     # 频率变高了，RSI 反应会更剧烈
+#     x = np.linspace(0, 20 * np.pi, n) 
     
-    # 1. 基础震荡: 幅度放大到 15 (从 85 震荡到 115)
-    cycle = 15 * np.sin(x)
+#     # 1. 基础震荡: 幅度放大到 15 (从 85 震荡到 115)
+#     cycle = 15 * np.sin(x)
     
-    # 2. 噪音: 增加一点随机性，让它不那么像完美的数学公式
-    noise = np.random.normal(0, 3, n)
+#     # 2. 噪音: 增加一点随机性，让它不那么像完美的数学公式
+#     noise = np.random.normal(0, 3, n)
     
-    # 3. 核心修复: 移除向上的 Trend，改为水平震荡 (Flat Market)
-    base_price = 100
-    close = base_price + cycle + noise
+#     # 3. 核心修复: 移除向上的 Trend，改为水平震荡 (Flat Market)
+#     base_price = 100
+#     close = base_price + cycle + noise
     
-    df = pd.DataFrame({
-        'Open': close + np.random.normal(0, 1, n),
-        'Close': close,
-        'High': close + abs(np.random.normal(0, 2, n)), # High 必须比 Close 高
-        'Low': close - abs(np.random.normal(0, 2, n)),  # Low 必须比 Close 低
-        'Volume': np.random.randint(100, 1000, n)
-    })
-    df.index = pd.date_range("2023-01-01", periods=n, freq="H")
-    return df
+#     df = pd.DataFrame({
+#         'Open': close + np.random.normal(0, 1, n),
+#         'Close': close,
+#         'High': close + abs(np.random.normal(0, 2, n)), # High 必须比 Close 高
+#         'Low': close - abs(np.random.normal(0, 2, n)),  # Low 必须比 Close 低
+#         'Volume': np.random.randint(100, 1000, n)
+#     })
+#     df.index = pd.date_range("2023-01-01", periods=n, freq="H")
+#     return df
 
-# 生成数据
-df = create_mock_data()
+# # 生成数据
+# df = create_mock_data()
+
+# ==========================================
+# 1. 构造“剧本”数据 (Scripted Data)
+# ==========================================
+# 我们需要至少 50-60 行数据，因为 ADX/RSI 需要前 14 天作为计算预热
+data = {
+    'Open': [], 'High': [], 'Low': [], 'Close': [], 'Volume': []
+}
+
+# 阶段 A: 横盘震荡 (40天) -> 让 ADX 降下来，RSI 回到 50
+for i in range(40):
+    price = 100 + (i % 3) - 1  # 在 99, 100, 101 之间跳动
+    data['Open'].append(price)
+    data['High'].append(price + 1)
+    data['Low'].append(price - 1)
+    data['Close'].append(price)
+    data['Volume'].append(1000)
+
+# 阶段 B: 急跌 (5天) -> 触发 RSI < 30，同时 ADX 还没来得及飙升
+drops = [98, 96, 94, 91, 88] 
+for p in drops:
+    data['Open'].append(p + 1)
+    data['High'].append(p + 1)
+    data['Low'].append(p - 1)
+    data['Close'].append(p)     # 收盘价持续下跌
+    data['Volume'].append(2000) # 放量下跌
+
+# 阶段 C: 反弹 (15天) -> 获利了结
+rebounds = [90, 92, 95, 97, 100, 102, 103, 102, 101, 100, 100, 100, 100, 100, 100]
+for p in rebounds:
+    data['Open'].append(p - 1)
+    data['High'].append(p + 1)
+    data['Low'].append(p - 1)
+    data['Close'].append(p)
+    data['Volume'].append(1500)
+
+df = pd.DataFrame(data)
+df.index = pd.date_range("2023-01-01", periods=len(df), freq="D")
 
 # print(df)
 
