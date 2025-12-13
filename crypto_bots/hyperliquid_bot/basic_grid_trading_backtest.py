@@ -165,8 +165,8 @@ class GridBacktester:
 # 3 真实数据从yahoo拿的
 # 1. 设置下载参数
 ticker = "AAPL"  # 股票代码，比如 Apple (AAPL), 比特币 (BTC-USD)
-start_date = "2023-01-01"
-end_date = "2023-12-31"
+start_date = "2024-01-01"
+end_date = "2024-12-31"
 
 print(f"正在从 yfinance 下载 {ticker} 的真实数据...")
 
@@ -199,6 +199,15 @@ print("\n列名:", df.columns.tolist())
 # ==========================================
 
 # 10000 U, 区间 2000-4000, 20个格子
-bot = GridBacktester(df, lower_price=2000, upper_price=4000, grid_num=20, initial_balance=10000)
+# bot = GridBacktester(df, lower_price=2000, upper_price=4000, grid_num=20, initial_balance=10000)
+
+'''
+这个case是 在牛市的时候，那肯定是赚的
+因为 这个是 做多网格策略，然后我们又没有止损 就一直hold着，止损从来没被触发
+之后position又会等到 相对应卖的位置 (每个不同的单. eg. 做多 单 $150(position)， 假设触发$160(卖的位置))
+因为是牛市，而且我们又没有止损。所以每个单，都终将等到相对应卖的位置 并盈利
+是好策略吗？不是，因为这个策略 并没有把单纯地 buy and hold 赚得多
+'''
+bot = GridBacktester(df, lower_price=167, upper_price=238, grid_num=20, initial_balance=10000)
 bot.run()
 bot.report()
