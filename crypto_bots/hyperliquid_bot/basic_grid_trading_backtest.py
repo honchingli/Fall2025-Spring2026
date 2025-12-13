@@ -131,6 +131,17 @@ class GridBacktester:
         """输出最终结果"""
         # 计算最后剩下的持仓市值 (浮动盈亏)
         final_price = self.df.iloc[-1]['Close']
+        print(f"df: {df}")
+        print(f"df.iloc[-1]: {df.iloc[-1]}")
+        '''
+        赚的是不会holding的，因为会在最上面那条线就卖掉/止盈了
+        最上面那条线是没有buy limit order的，不然在那设最上面线的止盈？
+
+        holding的只有亏损，这个algo没有止损
+        在下跌趋势里，buy limit买的全部position/holdings
+        会越holding越多(因为buy limit orders越多被触发)
+        亏损也会越来越大, 下跌无止损
+        '''
         floating_value = self.holdings * final_price
         total_equity = self.balance + floating_value
         
@@ -163,12 +174,48 @@ class GridBacktester:
 
 
 # 3 真实数据从yahoo拿的
-# 1. 设置下载参数
+
+'''
+用不一样的dataset, 底下的参数也要改
+
+1 - Main
+上升趋势，结果是正向的，但是赚没有buy and hold来的多
+那么就是差的
+因为这algo是波动不够多，而且没有做空
+当然做空的风险就是上升趋势，这algo无止损，风险无限大
+'''
+# # 1. 设置下载参数
 ticker = "AAPL"  # 股票代码，比如 Apple (AAPL), 比特币 (BTC-USD)
 start_date = "2024-01-01"
 end_date = "2024-12-31"
 
-print(f"正在从 yfinance 下载 {ticker} 的真实数据...")
+'''
+2
+这边可以看到如果用下跌趋势
+又没有止损的话，亏损是严重的，因为正在下跌的positions/holdings我们一直hold着
+所以有floating(亏损)，在这个algo里 上升趋势的positions/holding最后一定会止盈(floating为0)
+而且这个基本的algo没有做空, 在空头的时候无赚头
+'''
+# # 1. 设置下载参数
+# ticker = "AMD"  # 股票代码，比如 Apple (AAPL), 比特币 (BTC-USD)
+# start_date = "2010-01-01"
+# end_date = "2012-10-26" 
+
+'''
+3
+用上升趋势测试
+这个结果是好的
+因为正好这个区间，一直上上下下(交易次数多)，
+并且最后是上升趋势(没有hold着亏的position/holdings, 也就无floating)
+无floating是因为，我们全部的买单都会止盈
+(但我们无止损， 如果是下跌，那就亏损大)
+'''
+# ticker = "AMD"  # 股票代码，比如 Apple (AAPL), 比特币 (BTC-USD)
+# start_date = "2020-07-29"
+# end_date = "2021-08-05" 
+
+
+# print(f"正在从 yfinance 下载 {ticker} 的真实数据...")
 
 # 2. 获取数据 (这就是你要的 Dataset)
 # yfinance 下载的数据自动包含了 Open, High, Low, Close, Volume
@@ -208,6 +255,15 @@ print("\n列名:", df.columns.tolist())
 因为是牛市，而且我们又没有止损。所以每个单，都终将等到相对应卖的位置 并盈利
 是好策略吗？不是，因为这个策略 并没有把单纯地 buy and hold 赚得多
 '''
+
+# # 上升趋势, 1
 bot = GridBacktester(df, lower_price=167, upper_price=238, grid_num=20, initial_balance=10000)
+
+# # 下跌趋势, 2
+# bot = GridBacktester(df, lower_price=5.67, upper_price=10.07, grid_num=20, initial_balance=10000)
+
+# 上升趋势, 3
+# bot = GridBacktester(df, lower_price=73, upper_price=99.60, grid_num=20, initial_balance=10000)
+
 bot.run()
 bot.report()
