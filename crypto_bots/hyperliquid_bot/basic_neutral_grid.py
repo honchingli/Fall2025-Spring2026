@@ -87,6 +87,8 @@ def init_grid_orders(levels, p0, N=None):
 sell_levels, buy_levels = init_grid_orders(levels, p0, 5)
 print(f"sell_levels: {sell_levels}, buy_levels: {buy_levels}")
 
+
+'''被fill_sequence_close_based替代'''
 def triggered_in_candle(row, sell_levels, buy_levels):
     """
     输入一根K线 row（有High/Low）
@@ -100,9 +102,48 @@ def triggered_in_candle(row, sell_levels, buy_levels):
 
     return trig_sells, trig_buys
 
-trig_sells, trig_buys = triggered_in_candle(df.iloc[0], 
-                                            sell_levels, buy_levels)
-print(f"trig_sells: {trig_sells}, trig_buys: {trig_buys}")
+# trig_sells, trig_buys = triggered_in_candle(df.iloc[0], 
+#                                             sell_levels, buy_levels)
+# print(f"trig_sells: {trig_sells}, trig_buys: {trig_buys}")
 
+# 看前20根K线里 触发情况
+# for t, row in df.head(5).iterrows():
+#     print(f"t: {t}, row: {row}")
+#     s, b = triggered_in_candle(row, sell_levels, buy_levels)
+#     print(f"triggered sells: {s}, triggered buys:{b}")
 
+def fill_sequence_close_based(row, sell_levels, buy_levels):
+    """
+    用 Open->Close 方向猜测同K内顺序：
+      - 若 Close >= Open：先处理 buys（先下探），再处理 sells（再上冲）
+      - 若 Close <  Open：先处理 sells（先上冲），再处理 buys（再下探）
+    返回一个 list[("buy"/"sell", price)]，按执行顺序排列
+    """
+    o = float(row["Open"])
+    c = float(row["Close"])
+    h = float(row["High"])
+    l = float(row["Low"])
+
+    trig_sells = sorted([lv for lv in sell_levels if h>=lv]) # 从低到高
+    trig_buys = sorted([lv for lv in buy_levels if l<=lv], reverse=True)  # 从高到低（更贴近“先吃近的格子”）
+
+    events = []
+
+    if c >= o:
+        # 先下后上：先买后卖
+        events += [("buy", p) for p in trig_buys]
+        events += [("sell", p) for p in trig_sells]
+    else:
+        # 先上后下：先卖后买
+        events += [("sell", p) for p in trig_sells]
+        events += [("buy", p) for p in trig_buys]
+    return events
+
+# events = fill_sequence_close_based(df.iloc[0], sell_levels, buy_levels)
+# print(events)
+
+for t, row in df.head(5).iterrows():
+    events = fill_sequence_close_based(row, sell_levels, buy_levels)
+    if events:
+        print(t, events, "O/C:", row["Open"], row["Close"], "H/L:", row["High"], row["Low"])
 
