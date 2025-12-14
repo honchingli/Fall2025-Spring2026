@@ -95,6 +95,19 @@ class GridBacktester:
         '''
         create N grids
         格子的数量会比线的数量少1
+        从这边开始发现了个 Big BUG of this algo
+        在run function里面
+        for cur_price within all prices
+            for grid of grids
+                if cur_price[low] <= grid.buy_price
+                    # 买入
+                    cost = grid.buy_price * grid.quantity
+        那么
+        eg.
+        当前价格在2000
+        那一下子上面 (2200, 2400, 2600, .., 4000) 的买单会全部一次性触发
+        并且到我们的cost里面
+        是不对的
         '''
         for i in range(len(prices - 1)):
             grid = GridOrder(prices[0])
