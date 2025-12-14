@@ -142,8 +142,14 @@ def fill_sequence_close_based(row, sell_levels, buy_levels):
 # events = fill_sequence_close_based(df.iloc[0], sell_levels, buy_levels)
 # print(events)
 
-for t, row in df.head(5).iterrows():
-    events = fill_sequence_close_based(row, sell_levels, buy_levels)
-    if events:
-        print(t, events, "O/C:", row["Open"], row["Close"], "H/L:", row["High"], row["Low"])
+# for t, row in df.head(5).iterrows():
+#     events = fill_sequence_close_based(row, sell_levels, buy_levels)
+#     if events:
+#         print(t, events, "O/C:", row["Open"], row["Close"], "H/L:", row["High"], row["Low"])
+
+
+
+
+
+
 
