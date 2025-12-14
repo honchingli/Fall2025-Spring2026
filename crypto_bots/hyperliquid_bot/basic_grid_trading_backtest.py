@@ -83,6 +83,8 @@ class GridBacktester:
                 '''
                 grid是object
                 这边用low比较好，因为在真实玩的时候，虽然价格还没close, 只要碰到 limit order就fulfill了
+
+                大逻辑BUG
                 '''
                 if grid.status == "OPEN":
                     # 如果价格跌破了买入价 (这里用 low 还是 close 取决于激进程度，通常用 low 容易成交)
