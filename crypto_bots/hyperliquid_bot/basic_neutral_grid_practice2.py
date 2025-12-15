@@ -91,5 +91,3 @@ def init_pending_orders(levels, p0, N=5, size=1.0):
         pending[lv] = Order("Buy", lv, size)
     return pending
 
-
-
