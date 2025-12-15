@@ -172,8 +172,8 @@ def run_grid_debug(df, lower, upper, step, N=5, size=1.0, max_rows=50):
     print(f"p0 = {p0}")
     print("initial pending:", sorted((p, o.side) for p, o in pending.items()))
 
-    for t, row in df.head(1).iterrows():
-        print(f"t: {t}, row: {row}")
+    for t, row in df.head(max_rows).iterrows():
+        # print(f"t: {t}, row: {row}")
         # 快照：只允许“本K线开始就存在”的单触发
         snapshot = list(pending.values())
         # print(f"snapshot: {snapshot}")
@@ -183,13 +183,37 @@ def run_grid_debug(df, lower, upper, step, N=5, size=1.0, max_rows=50):
             continue
         print(f"\n[{t}] O={row['Open']:.2f} H={row['High']:.2f} L={row['Low']:.2f} C={row['Close']:.2f}")
 
-    # for od in events:
+        for od in events:
+            # 如果它已经被前面的事件成交删掉了，就跳过
+            if od.price not in pending:
+                continue
+
+            # 成交，从pending 删除
+            pending.pop(od.price, None)
+            print(f"Filled: {od.side}, {od.price}")
+
+            #补单
+            replenish_after_fill(od, levels, idx_map, pending, size=size)
+
+        # 打印当前挂单概览（可选）
+        buys = sorted([p for p, o in pending.items() if o.side == "buy"])
+        sells = sorted([p for p, o in pending.items() if o.side == "sell"])
+        print("  pending buys :", buys)
+        print("  pending sells:", sells)
+
+    print(f"pending: {pending}")
 
 
 
-
-
-run_grid_debug(df, 40000, 45000, 100)
+run_grid_debug(
+    df,
+    lower=41000,
+    upper=44000,
+    step=100,
+    N=5,
+    size=1.0,
+    max_rows=1
+)
 
 
 
