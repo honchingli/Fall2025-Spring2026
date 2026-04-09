@@ -88,9 +88,6 @@
         <mxCell id="mujtQHXZtHZTKnA9qvM8-20" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Brand&lt;div&gt;oz&lt;/div&gt;&lt;div&gt;Tape(Optional)&lt;/div&gt;&lt;div&gt;Batch#&lt;/div&gt;&lt;div&gt;FDA status&lt;/div&gt;&lt;div&gt;Remaining(case)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="110" width="110" x="670" y="170" as="geometry" />
         </mxCell>
-        <mxCell id="mujtQHXZtHZTKnA9qvM8-21" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Brand&lt;div&gt;oz&lt;/div&gt;&lt;div&gt;Tape(Optional)&lt;/div&gt;&lt;div&gt;Batch#&lt;/div&gt;&lt;div&gt;FDA status&lt;/div&gt;&lt;div&gt;Remaining(case)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="110" width="110" x="540" y="170" as="geometry" />
-        </mxCell>
         <mxCell id="mujtQHXZtHZTKnA9qvM8-22" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Brand&lt;div&gt;oz&lt;/div&gt;&lt;div&gt;Tape(Optional)&lt;/div&gt;&lt;div&gt;Batch#&lt;/div&gt;&lt;div&gt;FDA status&lt;/div&gt;&lt;div&gt;Remaining(case)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="110" width="110" x="410" y="170" as="geometry" />
         </mxCell>
@@ -105,6 +102,9 @@
         </mxCell>
         <mxCell id="mujtQHXZtHZTKnA9qvM8-26" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="5th Isle&lt;div&gt;Lower level&lt;/div&gt;" vertex="1">
           <mxGeometry height="30" width="60" x="790" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="mujtQHXZtHZTKnA9qvM8-27" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Normal&lt;div&gt;12oz&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Brown&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;4F141&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Ready&lt;/span&gt;&lt;/div&gt;&lt;div&gt;100&lt;/div&gt;" vertex="1">
+          <mxGeometry height="110" width="110" x="540" y="170" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
