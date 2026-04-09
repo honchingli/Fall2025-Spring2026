@@ -7,13 +7,13 @@
         <mxCell id="nNpt4RjychmwKgsmxxXh-2" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;" value="">
           <mxGeometry height="50" relative="1" width="50" as="geometry">
             <mxPoint x="40" y="340" as="sourcePoint" />
-            <mxPoint x="780" y="340" as="targetPoint" />
+            <mxPoint x="790" y="340" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="nNpt4RjychmwKgsmxxXh-3" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;" value="">
           <mxGeometry height="50" relative="1" width="50" as="geometry">
             <mxPoint x="40" y="490" as="sourcePoint" />
-            <mxPoint x="780" y="490" as="targetPoint" />
+            <mxPoint x="790" y="490" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="mujtQHXZtHZTKnA9qvM8-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Brand&lt;div&gt;oz&lt;/div&gt;&lt;div&gt;Tape(Optional)&lt;/div&gt;&lt;div&gt;Batch#&lt;/div&gt;&lt;div&gt;FDA status&lt;/div&gt;&lt;div&gt;Remaining(case)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
@@ -43,13 +43,13 @@
         <mxCell id="mujtQHXZtHZTKnA9qvM8-9" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;" value="">
           <mxGeometry height="50" relative="1" width="50" as="geometry">
             <mxPoint x="910" y="339.58" as="sourcePoint" />
-            <mxPoint x="1650" y="339.58" as="targetPoint" />
+            <mxPoint x="1660" y="340" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="mujtQHXZtHZTKnA9qvM8-10" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;" value="">
           <mxGeometry height="50" relative="1" width="50" as="geometry">
             <mxPoint x="910" y="489.58" as="sourcePoint" />
-            <mxPoint x="1650" y="489.58" as="targetPoint" />
+            <mxPoint x="1660" y="490" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="mujtQHXZtHZTKnA9qvM8-11" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Normal&lt;div&gt;&lt;div&gt;14 oz&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;No Tape&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;4F108&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Lab&lt;/span&gt;&lt;/div&gt;&lt;div&gt;100 cases&lt;/div&gt;&lt;/div&gt;" vertex="1">
@@ -76,13 +76,13 @@
         <mxCell id="mujtQHXZtHZTKnA9qvM8-18" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;" value="">
           <mxGeometry height="50" relative="1" width="50" as="geometry">
             <mxPoint x="40" y="150" as="sourcePoint" />
-            <mxPoint x="780" y="150" as="targetPoint" />
+            <mxPoint x="790" y="150" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="mujtQHXZtHZTKnA9qvM8-19" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;" value="">
           <mxGeometry height="50" relative="1" width="50" as="geometry">
             <mxPoint x="40" y="300" as="sourcePoint" />
-            <mxPoint x="780" y="300" as="targetPoint" />
+            <mxPoint x="790" y="300" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="mujtQHXZtHZTKnA9qvM8-22" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Brand&lt;div&gt;oz&lt;/div&gt;&lt;div&gt;Tape(Optional)&lt;/div&gt;&lt;div&gt;Batch#&lt;/div&gt;&lt;div&gt;FDA status&lt;/div&gt;&lt;div&gt;Remaining(case)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
@@ -105,6 +105,24 @@
         </mxCell>
         <mxCell id="mujtQHXZtHZTKnA9qvM8-28" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Normal&lt;div&gt;12oz&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Brown&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;4F141&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Ready&lt;/span&gt;&lt;/div&gt;&lt;div&gt;100&lt;/div&gt;" vertex="1">
           <mxGeometry height="110" width="110" x="670" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="mujtQHXZtHZTKnA9qvM8-29" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="790" y="300" as="sourcePoint" />
+            <mxPoint x="790" y="150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mujtQHXZtHZTKnA9qvM8-30" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="789.17" y="489.58" as="sourcePoint" />
+            <mxPoint x="789.17" y="339.58" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mujtQHXZtHZTKnA9qvM8-31" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1660" y="489.58000000000004" as="sourcePoint" />
+            <mxPoint x="1660" y="339.58000000000004" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
