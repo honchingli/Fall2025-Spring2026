@@ -4,35 +4,38 @@
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="nNpt4RjychmwKgsmxxXh-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="" vertex="1">
-          <mxGeometry height="80" width="80" x="700" y="350" as="geometry" />
-        </mxCell>
         <mxCell id="nNpt4RjychmwKgsmxxXh-2" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;" value="">
           <mxGeometry height="50" relative="1" width="50" as="geometry">
-            <mxPoint x="210" y="340" as="sourcePoint" />
+            <mxPoint x="40" y="340" as="sourcePoint" />
             <mxPoint x="780" y="340" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="nNpt4RjychmwKgsmxxXh-3" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;" value="">
           <mxGeometry height="50" relative="1" width="50" as="geometry">
-            <mxPoint x="210" y="450" as="sourcePoint" />
-            <mxPoint x="780" y="450" as="targetPoint" />
+            <mxPoint x="40" y="490" as="sourcePoint" />
+            <mxPoint x="780" y="490" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="nNpt4RjychmwKgsmxxXh-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="" vertex="1">
-          <mxGeometry height="80" width="80" x="600" y="350" as="geometry" />
+        <mxCell id="mujtQHXZtHZTKnA9qvM8-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Brand&lt;div&gt;oz&lt;/div&gt;&lt;div&gt;Tape(Optional)&lt;/div&gt;&lt;div&gt;Batch#&lt;/div&gt;&lt;div&gt;FDA status&lt;/div&gt;&lt;div&gt;Remaining(case)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="110" width="110" x="360" y="610" as="geometry" />
         </mxCell>
-        <mxCell id="nNpt4RjychmwKgsmxxXh-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="" vertex="1">
-          <mxGeometry height="80" width="80" x="500" y="350" as="geometry" />
+        <mxCell id="mujtQHXZtHZTKnA9qvM8-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Brand&lt;div&gt;oz&lt;/div&gt;&lt;div&gt;Tape(Optional)&lt;/div&gt;&lt;div&gt;Batch#&lt;/div&gt;&lt;div&gt;FDA status&lt;/div&gt;&lt;div&gt;Remaining(case)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="110" width="110" x="670" y="360" as="geometry" />
         </mxCell>
-        <mxCell id="nNpt4RjychmwKgsmxxXh-6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="" vertex="1">
-          <mxGeometry height="80" width="80" x="400" y="350" as="geometry" />
+        <mxCell id="mujtQHXZtHZTKnA9qvM8-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Brand&lt;div&gt;oz&lt;/div&gt;&lt;div&gt;Tape(Optional)&lt;/div&gt;&lt;div&gt;Batch#&lt;/div&gt;&lt;div&gt;FDA status&lt;/div&gt;&lt;div&gt;Remaining(case)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="110" width="110" x="540" y="360" as="geometry" />
         </mxCell>
-        <mxCell id="nNpt4RjychmwKgsmxxXh-7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="" vertex="1">
-          <mxGeometry height="80" width="80" x="300" y="350" as="geometry" />
+        <mxCell id="mujtQHXZtHZTKnA9qvM8-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Brand&lt;div&gt;oz&lt;/div&gt;&lt;div&gt;Tape(Optional)&lt;/div&gt;&lt;div&gt;Batch#&lt;/div&gt;&lt;div&gt;FDA status&lt;/div&gt;&lt;div&gt;Remaining(case)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="110" width="110" x="410" y="360" as="geometry" />
         </mxCell>
-        <mxCell id="nNpt4RjychmwKgsmxxXh-8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="" vertex="1">
-          <mxGeometry height="80" width="80" x="200" y="350" as="geometry" />
+        <mxCell id="mujtQHXZtHZTKnA9qvM8-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Brand&lt;div&gt;oz&lt;/div&gt;&lt;div&gt;Tape(Optional)&lt;/div&gt;&lt;div&gt;Batch#&lt;/div&gt;&lt;div&gt;FDA status&lt;/div&gt;&lt;div&gt;Remaining(case)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="110" width="110" x="280" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="mujtQHXZtHZTKnA9qvM8-6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Brand&lt;div&gt;oz&lt;/div&gt;&lt;div&gt;Tape(Optional)&lt;/div&gt;&lt;div&gt;Batch#&lt;/div&gt;&lt;div&gt;FDA status&lt;/div&gt;&lt;div&gt;Remaining(case)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="110" width="110" x="150" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="mujtQHXZtHZTKnA9qvM8-7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Brand&lt;div&gt;oz&lt;/div&gt;&lt;div&gt;Tape(Optional)&lt;/div&gt;&lt;div&gt;Batch#&lt;/div&gt;&lt;div&gt;FDA status&lt;/div&gt;&lt;div&gt;Remaining(case)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="110" width="110" x="20" y="360" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
