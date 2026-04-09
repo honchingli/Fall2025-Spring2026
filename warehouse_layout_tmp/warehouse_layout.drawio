@@ -37,6 +37,42 @@
         <mxCell id="mujtQHXZtHZTKnA9qvM8-7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Brand&lt;div&gt;oz&lt;/div&gt;&lt;div&gt;Tape(Optional)&lt;/div&gt;&lt;div&gt;Batch#&lt;/div&gt;&lt;div&gt;FDA status&lt;/div&gt;&lt;div&gt;Remaining(case)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="110" width="110" x="20" y="360" as="geometry" />
         </mxCell>
+        <mxCell id="mujtQHXZtHZTKnA9qvM8-8" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="6th Isle&lt;div&gt;Lower level&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="60" x="790" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="mujtQHXZtHZTKnA9qvM8-9" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="910" y="339.58" as="sourcePoint" />
+            <mxPoint x="1650" y="339.58" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mujtQHXZtHZTKnA9qvM8-10" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="910" y="489.58" as="sourcePoint" />
+            <mxPoint x="1650" y="489.58" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mujtQHXZtHZTKnA9qvM8-11" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Brand&lt;div&gt;oz&lt;/div&gt;&lt;div&gt;Tape(Optional)&lt;/div&gt;&lt;div&gt;Batch#&lt;/div&gt;&lt;div&gt;FDA status&lt;/div&gt;&lt;div&gt;Remaining(case)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="110" width="110" x="1540" y="359.58" as="geometry" />
+        </mxCell>
+        <mxCell id="mujtQHXZtHZTKnA9qvM8-12" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Brand&lt;div&gt;oz&lt;/div&gt;&lt;div&gt;Tape(Optional)&lt;/div&gt;&lt;div&gt;Batch#&lt;/div&gt;&lt;div&gt;FDA status&lt;/div&gt;&lt;div&gt;Remaining(case)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="110" width="110" x="1410" y="359.58" as="geometry" />
+        </mxCell>
+        <mxCell id="mujtQHXZtHZTKnA9qvM8-13" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Brand&lt;div&gt;oz&lt;/div&gt;&lt;div&gt;Tape(Optional)&lt;/div&gt;&lt;div&gt;Batch#&lt;/div&gt;&lt;div&gt;FDA status&lt;/div&gt;&lt;div&gt;Remaining(case)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="110" width="110" x="1280" y="359.58" as="geometry" />
+        </mxCell>
+        <mxCell id="mujtQHXZtHZTKnA9qvM8-14" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Brand&lt;div&gt;oz&lt;/div&gt;&lt;div&gt;Tape(Optional)&lt;/div&gt;&lt;div&gt;Batch#&lt;/div&gt;&lt;div&gt;FDA status&lt;/div&gt;&lt;div&gt;Remaining(case)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="110" width="110" x="1150" y="359.58" as="geometry" />
+        </mxCell>
+        <mxCell id="mujtQHXZtHZTKnA9qvM8-15" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Brand&lt;div&gt;oz&lt;/div&gt;&lt;div&gt;Tape(Optional)&lt;/div&gt;&lt;div&gt;Batch#&lt;/div&gt;&lt;div&gt;FDA status&lt;/div&gt;&lt;div&gt;Remaining(case)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="110" width="110" x="1020" y="359.58" as="geometry" />
+        </mxCell>
+        <mxCell id="mujtQHXZtHZTKnA9qvM8-16" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Brand&lt;div&gt;oz&lt;/div&gt;&lt;div&gt;Tape(Optional)&lt;/div&gt;&lt;div&gt;Batch#&lt;/div&gt;&lt;div&gt;FDA status&lt;/div&gt;&lt;div&gt;Remaining(case)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="110" width="110" x="890" y="359.58" as="geometry" />
+        </mxCell>
+        <mxCell id="mujtQHXZtHZTKnA9qvM8-17" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="6th Isle&lt;div&gt;Higher level&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="60" x="1660" y="399.58" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
